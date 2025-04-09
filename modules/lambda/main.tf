@@ -8,7 +8,7 @@ data "archive_file" "by_payment_methods_lambda" {
 resource "aws_lambda_function" "by_payment_methods_lambda" {
   function_name = "payment-methods-count"
   role          = "arn:aws:iam::260073349210:role/service-role/pmendhe-Lambda-function"
-  handler       = "categories_report.lambda_handler"
+  handler       = "by_payment_methods_lambda.lambda_handler"
   runtime       = "python3.11"
   filename      = data.archive_file.by_payment_methods_lambda.output_path
   source_code_hash = data.archive_file.by_payment_methods_lambda.output_base64sha256
@@ -26,7 +26,7 @@ data "archive_file" "counts_report" {
 resource "aws_lambda_function" "counts_report" {
   function_name = "counts_report"
   role          = "arn:aws:iam::260073349210:role/service-role/pmendhe-Lambda-function"
-  handler       = "lambda_function.lambda_handler"
+  handler       = "counts_report.lambda_handler"
   runtime       = "python3.11"
   filename      = data.archive_file.counts_report.output_path
   source_code_hash = data.archive_file.counts_report.output_base64sha256
@@ -43,7 +43,7 @@ data "archive_file" "categories_report" {
 resource "aws_lambda_function" "categories_report" {
   function_name = "categories_report"
   role          = "arn:aws:iam::260073349210:role/service-role/pmendhe-Lambda-function"
-  handler       = "lambda_function.lambda_handler"
+  handler       = "categories_report.lambda_handler"
   runtime       = "python3.11"
   filename      = data.archive_file.categories_report.output_path
   source_code_hash = data.archive_file.categories_report.output_base64sha256
@@ -60,7 +60,7 @@ data "archive_file" "Trigger_Step_Function" {
 resource "aws_lambda_function" "Trigger_Step_Function" {
   function_name = "pmendhe_Trigger_Step_Function"
   role          = "arn:aws:iam::260073349210:role/service-role/pmendhe-Lambda-function"
-  handler       = "lambda_function.lambda_handler"
+  handler       = "Trigger_Step_Function.lambda_handler"
   runtime       = "python3.11"
   filename      = data.archive_file.Trigger_Step_Function.output_path
   source_code_hash = data.archive_file.Trigger_Step_Function.output_base64sha256
