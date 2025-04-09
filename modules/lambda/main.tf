@@ -8,7 +8,7 @@ data "archive_file" "by_payment_methods_lambda" {
 resource "aws_lambda_function" "by_payment_methods_lambda" {
   function_name = "payment-methods-count"
   role          = "arn:aws:iam::260073349210:role/service-role/pmendhe-Lambda-function"
-  handler       = "lambda_function.lambda_handler"
+  handler       = "categories_report.lambda_handler"
   runtime       = "python3.11"
   filename      = data.archive_file.by_payment_methods_lambda.output_path
   source_code_hash = data.archive_file.by_payment_methods_lambda.output_base64sha256
