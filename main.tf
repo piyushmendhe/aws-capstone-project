@@ -18,3 +18,7 @@ module "s3" {
   source = "./modules/s3"
 }
 
+module "Crawler" {
+  source = "./modules/crawler"
+}
+
