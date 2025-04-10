@@ -22,3 +22,7 @@ module "Crawler" {
   source = "./modules/crawler"
 }
 
+module "iam" {
+  source = "./modules/iam"
+}
+
