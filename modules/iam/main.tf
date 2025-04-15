@@ -32,4 +32,3 @@ resource "aws_iam_role" "pmendhe_lambda_function" {
 }
 
 
-
