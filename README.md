@@ -88,7 +88,7 @@ aws-capstone-project
 ### Prerequisites
 - Terraform >= 1.3  
 - AWS CLI configured with appropriate credentials  
-- Python 3.9+  
+- Python 3.11  
 
 ### Steps
 ```bash
@@ -104,3 +104,4 @@ terraform plan
 
 # Deploy infrastructure
 terraform apply
+
