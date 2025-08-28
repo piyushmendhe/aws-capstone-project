@@ -30,3 +30,77 @@ This project highlights **event-driven architecture, ETL orchestration, serverle
 ---
 
 ## 📂 Repository Structure
+
+aws-capstone-project
+│ .gitignore
+│ .terraform.lock.hcl
+│ backend.tf
+│ main.tf
+│ outputs.tf
+│ README.md
+│ variables.tf
+│
+├── .github
+│ └── workflows
+│ └── terraform.yml # GitHub Actions workflow for CI/CD
+│
+└── modules
+├── crawler # Glue Crawler setup
+│ └── main.tf
+├── glue # Glue Job definitions
+│ └── main.tf
+├── iam # IAM Roles & Policies
+│ └── main.tf
+├── lambda # Python Lambda functions + Terraform
+│ ├── by_payment_methods_lambda.py
+│ ├── categories_report.py
+│ ├── counts_report.py
+│ ├── Trigger_Step_Function.py
+│ └── main.tf
+├── s3 # S3 bucket setup
+│ └── main.tf
+└── step_function # Step Function workflow
+└── main.tf
+
+---
+
+## 📊 Workflow
+1. A new file is uploaded to **S3**.  
+2. The upload triggers a **Lambda function**.  
+3. Lambda calls the **Step Function**, which orchestrates the pipeline.  
+4. **Glue Crawlers** update the Data Catalog.  
+5. **Glue Jobs** transform raw data into structured tables.  
+6. **Athena** queries generate insights.  
+7. Lambda functions prepare and store reports.
+
+---
+
+## ✅ Features
+- Fully automated, event-driven pipeline.
+- Modular Terraform design for reusability.
+- Secure IAM roles and least-privilege access.
+- CI/CD pipeline for Terraform deployment.
+- Python-based reporting with aggregation (e.g., by category, by payment method).
+
+---
+
+## 📦 Deployment
+### Prerequisites
+- Terraform >= 1.3  
+- AWS CLI configured with appropriate credentials  
+- Python 3.9+  
+
+### Steps
+```bash
+# Clone the repository
+git clone https://github.com/piyushmendhe/aws-capstone-project.git
+cd aws-capstone-project
+
+# Initialize Terraform
+terraform init
+
+# Review the plan
+terraform plan
+
+# Deploy infrastructure
+terraform apply
