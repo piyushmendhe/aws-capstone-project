@@ -90,7 +90,7 @@ aws-capstone-project
 - AWS CLI configured with appropriate credentials  
 - Python 3.11  
 
-### Steps
+## Steps
 ```bash
 # Clone the repository
 git clone https://github.com/piyushmendhe/aws-capstone-project.git
@@ -106,7 +106,7 @@ terraform plan
 terraform apply
 ```
 
-##📈 Example Reports
+## 📈 Example Reports
 
 Category Report: Aggregates sales by product category.
 
@@ -116,7 +116,7 @@ Counts Report: Summarized transactions and customer counts.
 
 All reports are stored back into S3 for downstream analytics.
 
-##🎯 What This Project Demonstrates
+## 🎯 What This Project Demonstrates
 
 Expertise in Data Engineering with AWS.
 
@@ -126,7 +126,8 @@ Strong skills in Terraform, Python, and Cloud ETL workflows.
 
 Hands-on experience with event-driven architectures.
 
-##🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please fork the repo and submit a pull request.
+
 
